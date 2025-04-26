@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ci-repo-dev
+  name: ci-repo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ci-repo-dev
+      app: ci-repo
   template:
     metadata:
       labels:
-        app: ci-repo-dev
+        app: ci-repo
     spec:
       containers:
         - name: ci-repo
           image: d00243983/ci-repo:latest
+          ports:
+            - containerPort: 5000
           resources:
             limits:
               cpu: "500m"
@@ -26,4 +28,4 @@ spec:
             - name: UNLEASH_URL
               value: "http://your-unleash-server-url/api"
             - name: UNLEASH_INSTANCE_ID
-              value: UNLEASH_APP_NAME
+              value: "UNLEASH_APP_NAME"
