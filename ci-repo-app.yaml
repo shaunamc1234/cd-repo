@@ -8,7 +8,7 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    repoURL: 'https://github.com/your-username/cd-repo.git'  # <--- change this!
+    repoURL: 'https://github.com/shaunamc1234/cd-repo.git'
     targetRevision: HEAD
     path: overlays/dev
   project: default
