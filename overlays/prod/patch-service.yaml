@@ -4,4 +4,4 @@ metadata:
   name: ci-repo-service-prod
 spec:
   selector:
-    app: ci-repo-prod
+    app: ci-repo
