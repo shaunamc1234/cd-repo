@@ -1,12 +1,15 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: ci-repo-service-prod
+  name: ci-repo
 spec:
   selector:
-    app: ci-repo
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 5000
-  type: LoadBalancer
+    matchLabels:
+      app: ci-repo
+  template:
+    spec:
+      containers:
+      - name: ci-repo
+        env:
+        - name: UNLEASH_URL
+          value: "http://prod-unleash-url/api"
