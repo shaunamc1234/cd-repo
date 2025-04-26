@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ci-repo
+  name: ci-repo-service-prod
 spec:
   replicas: 3
   selector:
