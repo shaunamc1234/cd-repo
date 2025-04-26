@@ -3,7 +3,14 @@ kind: Deployment
 metadata:
   name: ci-repo
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ci-repo
   template:
+    metadata:
+      labels:
+        app: ci-repo
     spec:
       containers:
         - name: ci-repo
@@ -11,10 +18,12 @@ spec:
           resources:
             limits:
               cpu: "500m"
-              memory: "256Mi"
+              memory: "512Mi"
             requests:
-              cpu: "250m"
-              memory: "128Mi"
+              cpu: "200m"
+              memory: "256Mi"
           env:
             - name: UNLEASH_URL
               value: "http://your-unleash-server-url/api"
+            - name: UNLEASH_INSTANCE_ID
+              value: UNLEASH_APP_NAME

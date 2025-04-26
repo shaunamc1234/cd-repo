@@ -3,7 +3,14 @@ kind: Deployment
 metadata:
   name: ci-repo
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ci-repo
   template:
+    metadata:
+      labels:
+        app: ci-repo
     spec:
       containers:
         - name: ci-repo
