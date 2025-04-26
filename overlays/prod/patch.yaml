@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ci-repo-prod
+  name: ci-repo
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: ci-repo-prod
+      app: ci-repo
   template:
     metadata:
       labels:
-        app: ci-repo-prod
+        app: ci-repo
     spec:
       containers:
         - name: ci-repo
