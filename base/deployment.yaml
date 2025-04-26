@@ -11,3 +11,16 @@ spec:
     metadata:
       labels:
         app: ci-repo
+    spec:
+      containers:
+        - name: ci-repo
+          image: nginx:latest # <-- placeholder image. It will be patched in overlays (dev/prod)
+          ports:
+            - containerPort: 5000
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
