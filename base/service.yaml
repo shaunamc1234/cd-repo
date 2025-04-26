@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: ci-repo-service
 spec:
+  type: LoadBalancer
   selector:
     app: ci-repo
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 5000
-  type: LoadBalancer
+    - port: 80
+      targetPort: 5000
