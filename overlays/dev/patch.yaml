@@ -15,6 +15,9 @@ spec:
       containers:
       - name: ci-repo
         image: d00243983/ci-repo:latest
+        env:
+          - name: UNLEASH_URL
+            value: "http://your-unleash-server-url/api"
         resources:
           limits:
             cpu: "500m"
