@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ci-repo
-          image: nginx:latest # <-- placeholder image. It will be patched in overlays (dev/prod)
+          image: d00243983/ci-repo:v1.0.5
           ports:
             - containerPort: 5000
           resources:
