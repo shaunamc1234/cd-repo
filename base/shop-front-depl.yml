@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shop-front
+  labels:
+    app: shop-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shop-front
+  template:
+    metadata:
+      labels:
+        app: shop-front
+    spec:
+      containers:
+        - name: shop-front
+          image: d00243983/shop-front-svc:v1.0.7
+          ports:
+            - containerPort: 5000
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+            requests:
+              cpu: "200m"
+              memory: "256Mi"

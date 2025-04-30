@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-admin
+  labels:
+    app: product-admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-admin
+  template:
+    metadata:
+      labels:
+        app: product-admin
+    spec:
+      containers:
+        - name: product-admin
+          image: d00243983/product-admin-svc:v1.0.7
+          ports:
+            - containerPort: 5000
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+            requests:
+              cpu: "200m"
+              memory: "128Mi"
