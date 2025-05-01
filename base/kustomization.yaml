@@ -10,3 +10,4 @@ resources:
   - service.yaml
   - shop-front-depl.yaml
   - shop-front-svc.yaml
+  - ci-repo-app.yaml
