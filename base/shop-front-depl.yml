@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shop-front
+  name: shop-front 
+  namespace: default
   labels:
     app: shop-front
 spec:

@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: shop-front
+  namespace: default
 spec:
   selector:
     app: shop-front
