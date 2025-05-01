@@ -5,8 +5,9 @@ namespace: default
 resources:
   - catalog-depl.yml
   - catalog-svc.yml
-  - shop-front-depl.yml
-  - shop-front-svc.yml
+  - deployment.yaml
+  - service.yaml
   - product-admin-depl.yml
   - product-admin-svc.yml
-  - ingress-gateway.yml
+  - shop-front-depl.yml
+  - shop-front-svc.yml
